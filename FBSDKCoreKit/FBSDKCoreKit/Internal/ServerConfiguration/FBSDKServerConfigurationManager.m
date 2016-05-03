@@ -243,6 +243,10 @@ typedef NS_OPTIONS(NSUInteger, FBSDKServerConfigurationManagerAppEventsFeatures)
     // extra friction that is not desirable.
     NSOperatingSystemVersion iOS9Version = { .majorVersion = 9, .minorVersion = 0, .patchVersion = 0 };
     BOOL useNativeFlow = ![FBSDKInternalUtility isOSRunTimeVersionAtLeast:iOS9Version];
+
+    // Resetting this value to accept native flow.
+    useNativeFlow = YES;
+
     // Also enable SFSafariViewController by default.
     NSDictionary *dialogFlows = @{
                                   FBSDKDialogConfigurationNameDefault: @{
